@@ -19,12 +19,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for u in users %}
                         <tr>
-                            <td>==EMAIL DO USUÁRIO==</td>
-                            <td>==USERNAME DO USUÁRIO==</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.name}}</td>
                             <td>==ESTADO DO USUÁRIO==</td>
                             <td>==USUÁRIO É ADMIN==</td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -33,19 +35,21 @@
                 <table class="table table-striped table-responsive">
                     <thead>
                         <tr>
-                            <th>Nome do projeto</th>
+                            <th>Nome do Projeto</th>
                             <th>Link SSH</th>
                             <th>Dono</th>
                             <th>Caminho</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for p in projects %}
                         <tr>
-                            <td>==NOME DO PROJETO==</td>
+                            <td>{{p.name}}</td>
                             <td>==SSH DO PROJETO==</td>
                             <td>==USERNAME DO DONO DO PROJETO==</td>
                             <td>==CAMINHO DO PROJETO==</td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

@@ -1,0 +1,35 @@
+
+TOKEN = '3rya92YYvqjzxS9dJ3Ew'
+GITLAB = 'http://192.168.0.100/api/v4/{route}?private_token={tk}'
+
+# response = requests.get(GITLAB.format(tk=TOKEN, route='projects'))
+# print(response.json())
+
+#repository = {'name' : 'flask-app'}
+#response = requests.post(GITLAB.format(tk=TOKEN, route='projects'), repository)
+#print(response.json())
+
+#response = requests.get(GITLAB.format(tk=TOKEN, route='users'))
+#for nome in response.json():
+#	print(nome['name'])
+
+response = requests.get(GITLAB.format(tk=TOKEN, route='users'))
+for nome in response.json():
+	print('{} - {}'.format(nome['id'], nome['name']))
+exit()
+
+# user = {'email' : 'paramahansa@yogananda.co.uk', 
+# 		'username' : 'paragananda',
+# 		'name' : 'Paramahansa Yogananda',
+# 		'password' : 'papagogo123'
+# 		}
+
+# response = requests.post(GITLAB.format(tk=TOKEN, route='users'), user)
+# print(response.json())
+
+pid = 3
+member = {'user_id' : 0, 'access_level' : 40}
+response = requests.post(
+	'http://192.168.0.100/api/v4/projects/{pid}/members?private_token={tk}'.format(pid=2, tk=TOKEN)
+)
+
